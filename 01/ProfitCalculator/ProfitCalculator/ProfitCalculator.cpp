@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     double revenue;
-    double cost;
+	double cost;
     double grossProfit;
     double taxRate = 0.25;
     double tax;

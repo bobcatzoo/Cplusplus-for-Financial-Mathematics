@@ -5,32 +5,29 @@
 #include <cmath>
 using namespace std;
 
+double compoundInterest(double P, double i, int n)
+{
+    double interest = P * pow(1 + i * 0.01, n) - P;
+    return interest;
+}
+
 int main()
 {
-    int principal; //投资本金
-    double interestRate; //年利率
-    int numberOfYears; //投资年数
+    double principal;
+    double annalInterest;
+    int numberOfYears;
 
-    cout << "How much are you investing?" << endl;
+    cout << "How much are you investing ?" << endl;
     cin >> principal;
-    cout << "What's the annal interest rate (%)?" << endl;
-    cin >> interestRate;
-    cout << "How long for (Years)?" << endl;
+    cout << "What's the annal interest rate (%) ?" << endl;
+    cin >> annalInterest;
+    cout << "How long for (Years) ?" << endl;
     cin >> numberOfYears;
 
-    double finalBalance =
-        pow(1.0 + interestRate * 0.01, numberOfYears) * principal;
-    // pow(a, b)表示a的b次方a^b
-    double interest = finalBalance - principal;
-
-    cout << endl;
-    cout << "The principal: " << principal << endl;
-    cout << "The annal interest rate: " << interestRate << endl;
-    cout << "Investment periods: " << numberOfYears << endl;
-    cout << endl;
-
-    cout << "The final investment balance is " << finalBalance << endl;
-    cout << "You will earn " << interest << endl;
+    double interest = compoundInterest(principal, annalInterest, numberOfYears);
+    cout << "You want to invest " << principal << " with annal interest rate of "
+         << annalInterest << "% in " << numberOfYears << " Years." << endl;
+    cout << "Finally you will earn " << interest << "." << endl;
 
     return 0;
 
