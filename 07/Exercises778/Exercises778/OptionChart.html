@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['spot price', 'call value against spot price'],
+['0', 0],
+['10', 0],
+['20', 2.59812e-15],
+['30', 6.85187e-09],
+['40', 1.91228e-05],
+['50', 0.00239734],
+['60', 0.0544344],
+['70', 0.441453],
+['80', 1.85941],
+['90', 5.09122],
+['100', 10.4506],
+['110', 17.663],
+['120', 26.169],
+['130', 35.4403],
+['140', 45.1106],
+['150', 54.9701],
+['160', 64.913],
+['170', 74.8906],
+['180', 84.8821],
+['190', 94.8789]
+]);
+var view = new google.visualization.DataView(data);
+view.setColumns([0, 1, {
+calc: "stringify",
+sourceColumn: 1,
+type: "string",
+role: "annotation"
+},]);
+var options = {
+title: 'Line of call price against spot price',
+pointSize: 5
+};
+var chart = new google.visualization.LineChart(document.getElementById('payout_ratio'));
+chart.draw(view, options);
+}
+</script>
+</head>
+<body>
+<div id="payout_ratio" style="width: 1600px; height: 800px; "></div>
+</body>
+</html>

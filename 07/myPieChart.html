@@ -1,0 +1,37 @@
+<html>
+  <head>
+     <!--Load the AJAX API-->
+     <script type ="text/javascript"src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type ="text/javascript">
+            //  Load  the  Visualization  API
+            //  and  the  piechart   package .
+        google.charts.load('current', {'packages':['corechart']});
+            //  Set  a  callback  to run  when  the
+            //  Google   Visualization  API is  loaded .
+        google.charts.setOnLoadCallback(drawChart);
+            //  Callback   that   creates  and  populates  a  data  table ,
+            //  instantiates  the pie chart ,  passes  in the  data  and
+            //  draws  it.
+        function drawChart(){
+                //  Create  the  data   table .
+            var data = new google.visualization.arrayToDataTable([
+                    ['Topping', 'Slices'],
+                    ['Mushrooms', 4],
+                    ['Salami', 2],
+                    ['Spinach', 3]
+                ]);
+                // Set  chart   options
+                var options = {
+                    title:'Pizza Toppings',
+                    is3D:true};
+                //  Instantiate  and  draw  our chart ,  passing  in  some   options .
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+      <!--Div that will hold the pie chart-->
+      <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+  <head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Payout Ratio'],
+          ['2004',  1.2],
+          ['2005',  -0.25],
+          ['2006',  2.5],
+          ['2007',  5.8]
+        ]);
+        
+        // Use view to show annotation
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1, {
+            calc: "stringify",
+            sourceColumn: 1,
+            type: "string",
+            role: "annotation"
+        },]);
+
+      var options = {
+        title: 'Payout Ratio',
+        backgroundColor: '#fafbfc',
+        colors: ['#3073b5'],
+        // Display data point
+        pointSize: 5,
+      };
+
+        var chart = new google.visualization.LineChart(document.getElementById("payout_ratio"));
+        chart.draw(view, options);
+    }
+</script>
+  </head>
+  <body>
+    <div id="payout_ratio" style="width: 500px; height: 300px"></div>
+  </body>
+</html>
