@@ -17,4 +17,5 @@ double blackScholesPutPrice(double K, double T, double S_t, double vol, double r
 
 double myPrctile(const std::vector<double>& v, double percentage);
 
-double prctile(const std::vector<double>& v, double percentage);
+
+

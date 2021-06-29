@@ -156,9 +156,9 @@ double myPrctile(const std::vector<double>& v, double percentage)
     int indexBelow = (int) (percentage * N / 100.0 - 0.5); //<vector>索引从0开始，-0.5确保索引准确
     int indexAbove = indexBelow + 1;
 
-    if (indexAbove > N - 1) //p > 87.5时, 类比下面percentage的if语句
+    if (indexAbove > N-1) //p > 87.5时, 类比下面percentage的if语句
     {
-        return copy[N - 1];
+        return copy[N-1];
     }
     if (indexBelow < 0) //p < 12.5时
     {
@@ -184,4 +184,6 @@ double myPrctile(const std::vector<double>& v, double percentage)
     
     return valueBelow + correction;
 }
+
+
 

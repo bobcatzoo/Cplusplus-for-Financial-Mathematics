@@ -56,5 +56,15 @@ int main()
     //cout << "percentageBelow: " << percentageBelow << endl;
     //cout << "percentageAbove: " << percentageAbove << endl;
 
+    const vector<double> histVec{ 0.8, 1.0, 3.0, 3.0, 4.2, 5.1, 6.2, 5.1, 4.2, 8.2, 9.56, 12.6, 22.8, 16.8, 16.2, 6.2 };
+    vector<int> countHist = vhist(histVec, 10);
+
+    string histFile("histLineChart.html");
+
+    histLineChart(histFile, histVec, 10);
+        
+    cout << endl;
+
     return 0;
 }
+
