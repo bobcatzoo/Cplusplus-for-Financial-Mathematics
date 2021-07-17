@@ -26,7 +26,7 @@ double CallOption::price(BlackScholesModel& bsm) const
 	double r = bsm.reskFreeRate;
 	double T = maturity - bsm.date;
 
-	double numerator = log(S / K) + (r + 0.5 * pow(sigma, 2) * T);
+	double numerator = log(S / K) + (r + 0.5 * pow(sigma, 2)) * T;
 	double denominator = sigma * sqrt(T);
 	double d1 = numerator / denominator;
 	double d2 = d1 - denominator;
